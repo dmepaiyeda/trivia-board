@@ -1,5 +1,5 @@
 import React, { useDebugValue } from "react";
-import Square from "./Square";
+import QuestionCard from "./QuestionCard";
 import { Container, Row, Col } from "react-bootstrap";
 import PropTypes from "prop-types";
 
@@ -17,7 +17,7 @@ class Board extends React.Component{
   
     
     renderSquare(num){
-        return <Square value={num}/>
+        return <QuestionCard value={num}/>
     }
 
     render(){
@@ -30,7 +30,7 @@ class Board extends React.Component{
 
             category: "Sports",
             key: "c1",
-            color: "blue",
+            color: "info",
             questions: [
                 {
                     question: "What’s the diameter of a basketball hoop in inches?",
@@ -60,7 +60,7 @@ class Board extends React.Component{
 
             category: "Science", 
             key: "c2",
-            color: "yellow",
+            color: "warning",
             questions: [{
                 question:"This essential gas is important so that we can breathe",
                 options: ["Oxygen ", "Nitrogen", "Helium"],
@@ -88,7 +88,7 @@ class Board extends React.Component{
         ],
 
             category: "Music", 
-            color: "green",
+            color: "secondary",
             key: "c3",
             questions: [{
                 question:"Who was the very first American Idol winner?",
@@ -117,7 +117,7 @@ class Board extends React.Component{
 
             category: "Nature", 
             key: "c4",
-            color: "orange",
+            color: "primary",
             questions: [{
                 question:"What part of the plant conducts photosynthesis? ",
                 options: ["Stem", "Flower", "Leaf"],
@@ -181,26 +181,27 @@ class Board extends React.Component{
             
             <div>
 
-            <Container className="card-list-styling">
+            <Container fluid={true} className="card-list-styling">
                         <Col>
+                        
                             <Row>
-                                {trivia.map((value) => {
+                                {trivia && trivia.map((info) => {
+                                    console.log(info);
                                     return(
-                                        <Square
-                                        category={value.category}
-                                        key={value.key}
-                                        color={value.color}
-                                        question={value.questions.map((i) => {     
+                                        <QuestionCard
+                                        category={info.category}
+                                        key={info.key}
+                                        color={info.color}
+                                        question={info.questions.map((i) => {     
                                             return (<li>{i.question}</li>) 
                                          })}
-                                         options={value.questions.map((j)=> {
-                                             return(<li>{j.options}</li>)
+                                         options={info.questions.map((j)=> {
+                                             return(<li>{j.options[j]}</li>)
                                          })}
-                                         answer={value.questions.map((k)=> {
+                                         answer={info.questions.map((k)=> {
                                             return(<li>{k.answer}</li>)
                                         })}
-                                        score={value.questions.map((point, m)=> {
-                                            
+                                        score={info.questions.map((point, m)=> {
                                             return(
                                                 <div>
                                                     {/* <li key={m}>
