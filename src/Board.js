@@ -1,7 +1,5 @@
-import React, { useDebugValue } from "react";
 import QuestionCard from "./QuestionCard";
 import { Container, Row, Col } from "react-bootstrap";
-import PropTypes from "prop-types";
 
 class Board extends React.Component{
 
