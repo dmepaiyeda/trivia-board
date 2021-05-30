@@ -18,10 +18,11 @@
 }
 
 .game-board {
-  padding-right: 300px;
-  padding-left: 300px;
+  padding-right: 200px;
+  padding-left: 200px;
   text-align: center;
   margin: auto;
+  display: flexbox;
 }
 
 .board-heading {
@@ -38,7 +39,7 @@
 .card-item {
   margin: 6px;
   padding: 35px;
-  width: 200px;
+  width: 270px;
 }
 
 .answer-button-style {

@@ -10,6 +10,8 @@
 - The goal is to answer questions in one minute
 - Player is provided with questions from different categories
 
+**Please note:** the styling on the hosted version web application is not a complete depiction of my application. It seems like Netlify (the tool I used to host the app)did not produce the correct styling for the game board. When you run the application, you will see that the game cards on the board are properly aligned.
+
 ## Categories
 
 - Sports
