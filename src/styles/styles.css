@@ -1,0 +1,43 @@
+/* This file is for styling the game components*/
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 50px;
+  text-align: center;
+}
+
+.game {
+  display: block;
+  flex-direction: row;
+}
+
+.game-board {
+  padding-right: 200px;
+  padding-left: 200px;
+  text-align: center;
+  margin: auto;
+  display: flexbox;
+}
+
+.board-heading {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.card-item {
+  margin: 10px;
+  padding: 50px;
+  width: 250px;
+}
