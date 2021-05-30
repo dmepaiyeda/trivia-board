@@ -1,32 +1,37 @@
 # Trivia Quiz
 
-### Play the quiz at:
+### Play the quiz at: https://trivia-quiz-webapp.netlify.app/
 
-### Code repository: https://github.com/dmepaiyeda/trivia-board. 
+### Code repository: https://github.com/dmepaiyeda/trivia-board.
 
 ### A timed trivia web app
-* This project was built with React.js
-* The goal is to answer questions in one minute
-* Player is provided with questions from different categories
+
+- This project was built with React.js
+- The goal is to answer questions in one minute
+- Player is provided with questions from different categories
 
 ## Categories
-* Sports
-* Science
-* Music
-* Technology
+
+- Sports
+- Science
+- Music
+- Technology
 
 ## User journey
-* land on page with a game board of 16 question cards
-* select a card
-* start quiz:
-    * one question appears 
-    * provided with three options for an answer
-    * see quantity of points you can earn for the question
-    * answer question before timeout and card closes
-    * see your score on game board
+
+- land on page with a game board of 16 question cards
+- select a card
+- start quiz:
+  - one question appears
+  - provided with three options for an answer
+  - see quantity of points you can earn for the question
+  - answer question before timeout and card closes
+  - see your score on game board
+
 ## Getting Started
 
 To try out the game, navigate to the project directory run:
+
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -38,6 +43,7 @@ You will also see any lint errors in the console.
 ## Available Scripts
 
 In the project directory, you can also run:
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\

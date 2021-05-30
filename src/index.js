@@ -6,10 +6,6 @@ import Game from "./Game";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// const CARD_DATA = [
-//   {id}
-// ]
-
 ReactDOM.render(<Game />, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function

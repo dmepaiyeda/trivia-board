@@ -15,15 +15,13 @@ class QuestionCard extends React.Component {
     this.timer = 0;
   }
   handleShow = () => {
-    console.log("clicked");
     this.setState({
       showModal: true,
-      seconds: 5,
+      seconds: 500,
     });
     this.timer = setInterval(this.countDown, 1000);
   };
   handleClose = () => {
-    console.log("closed");
     this.setState({
       showModal: false,
     });
@@ -53,11 +51,13 @@ class QuestionCard extends React.Component {
         message: "Correct answer!",
       });
       this.props.handleScore(this.props.score);
+      this.handleClose();
     } else {
       this.setState({
         message: "Incorrect answer",
       });
       this.props.handleScore(-this.props.score);
+      this.handleClose();
     }
     clearInterval(this.timer);
   }
@@ -82,35 +82,37 @@ class QuestionCard extends React.Component {
           <Modal.Header closeButton>
             <Container fluid>
               <Row>
-                <Col xs={12} md={7}>
+                <Col xs={12} md={8}>
                   <Modal.Title>{question}</Modal.Title>
+                  <p>
+                    This question is worth <b>{score}</b> points
+                  </p>
                 </Col>
                 <Col>
-                  <h5>Your score: {totalScore}</h5>
-                  <h5>Points: {score}</h5>
-                  <h5>Time left: {this.state.seconds}</h5>
+                  <h5>YOUR SCORE: {totalScore}</h5>
+                  <h5>TIME LEFT: {this.state.seconds}</h5>
                 </Col>
               </Row>
             </Container>
           </Modal.Header>
 
           <Modal.Body>
-            <ol>
+            <div>
               {options.map((option) => {
-                return <Button onClick={this.checkAnswer}>{option}</Button>;
+                return (
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    block
+                    onClick={this.checkAnswer}
+                  >
+                    {option}
+                  </Button>
+                );
               })}
-            </ol>
+            </div>
             <h2> {this.state.message}</h2>
           </Modal.Body>
-
-          <Modal.Footer>
-            <Button onClick={this.handleClose} variant="secondary">
-              Close
-            </Button>
-            <Button onClick={this.handleClose} variant="primary">
-              Save changes
-            </Button>
-          </Modal.Footer>
         </Modal>
       </div>
     );
