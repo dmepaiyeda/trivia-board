@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Card } from "react-bootstrap";
 import { Button, Modal, Container, Row, Col } from "react-bootstrap";
-import Score from "./Score";
 
 class QuestionCard extends React.Component {
   constructor(props) {
