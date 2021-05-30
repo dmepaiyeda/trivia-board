@@ -34,6 +34,10 @@
 
 To try out the game, navigate to the project directory run:
 
+### npm -i
+
+Installs all the necessary dependencies to run the application
+
 ### `npm start`
 
 Runs the app in the development mode.\
