@@ -38,10 +38,17 @@
 
 .card-item {
   margin: 10px;
-  padding: 50px;
+  padding: 35px;
   width: 270px;
 }
 
 .answer-button-style {
   float: left;
+}
+
+.banner {
+  width: 620px;
+  height: 100px;
+  margin: 7px auto;
+  padding-left: 190px;
 }

@@ -2,6 +2,8 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { Button, Modal, Container, Row, Col } from "react-bootstrap";
 
+//QuestionCard component. Handles rendering questions/options, listening for clicks on answer and showing and hiding modal
+
 class QuestionCard extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +19,7 @@ class QuestionCard extends React.Component {
   handleShow = () => {
     this.setState({
       showModal: true,
-      seconds: 500,
+      seconds: 60,
     });
     this.timer = setInterval(this.countDown, 1000);
   };

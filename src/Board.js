@@ -3,6 +3,8 @@ import QuestionCard from "./QuestionCard";
 import { Container, Row, Col } from "react-bootstrap";
 import Score from "./Score";
 
+//Board component. Stores game data and, handles rendering the cards on the game board and score
+
 class Board extends React.Component {
   constructor(props) {
     super(props);
