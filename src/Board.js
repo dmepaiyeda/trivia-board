@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useDebugValue } from "react";
 import Square from "./Square";
+import { Container, Row, Col } from "react-bootstrap";
+import PropTypes from "prop-types";
 
 class Board extends React.Component{
+
+    // constructor(props){
+    //     super(props);
+    //     this.state = {
+    //         category: "",
+    //         color: "",
+    //         questions: []
+    //     }
+    // }
+
+  
     
     renderSquare(num){
         return <Square value={num}/>
@@ -16,6 +29,7 @@ class Board extends React.Component{
         const trivia = [{
 
             category: "Sports",
+            key: "c1",
             color: "blue",
             questions: [
                 {
@@ -45,6 +59,7 @@ class Board extends React.Component{
             ],
 
             category: "Science", 
+            key: "c2",
             color: "yellow",
             questions: [{
                 question:"This essential gas is important so that we can breathe",
@@ -74,6 +89,7 @@ class Board extends React.Component{
 
             category: "Music", 
             color: "green",
+            key: "c3",
             questions: [{
                 question:"Who was the very first American Idol winner?",
                 options: ["Kelly Clarkson", "Ryan Starr", "Hilary Duff"],
@@ -100,6 +116,7 @@ class Board extends React.Component{
             }],
 
             category: "Nature", 
+            key: "c4",
             color: "orange",
             questions: [{
                 question:"What part of the plant conducts photosynthesis? ",
@@ -127,9 +144,86 @@ class Board extends React.Component{
             }],
 
         }]
+
+        // var questionsList = trivia.questions.map((i) => {
+        //     return(
+        //         <li>{i.question}</li>
+        //     )
+        // });
+
+        // var optionsList = trivia.map((value) => {
+        //     return(
+        //         <div>
+        //             {
+        //                 value.questions.map((j) => {
+        //                     return(
+        //                         <li>{j.options}</li>
+        //                     )
+        //                 })
+        //         })
+        //         </div>
+        //     )
+        // });
+
+        // var answerList = trivia.questions.map((k) => {
+        //     return(
+        //         <li>{k.answer}</li>
+        //     )
+        // });
+
+        // var scoreList = trivia.questions.map((point) => {
+        //     return(
+        //         <li>{point.score}</li>
+        //     )
+        // });
+
         return(
+            
             <div>
-               <div className="board-row">
+
+            <Container className="card-list-styling">
+                        <Col>
+                            <Row>
+                                {trivia.map((value) => {
+                                    return(
+                                        <Square
+                                        category={value.category}
+                                        key={value.key}
+                                        color={value.color}
+                                        question={value.questions.map((i) => {     
+                                            return (<li>{i.question}</li>) 
+                                         })}
+                                         options={value.questions.map((j)=> {
+                                             return(<li>{j.options}</li>)
+                                         })}
+                                         answer={value.questions.map((k)=> {
+                                            return(<li>{k.answer}</li>)
+                                        })}
+                                        score={value.questions.map((point, m)=> {
+                                            
+                                            return(
+                                                <div>
+                                                    {/* <li key={m}>
+                                                     Issue number: {value.questions.key}
+                                                    </li> */}
+                                                    <Col>
+                                                        <Row>
+                                                            {point.score}
+                                                        </Row>
+                                                    </Col>
+                                                </div>
+                            
+                                        )})}
+
+                                        />
+                                    )
+                                })}
+                                
+                            </Row>
+                        </Col>
+                        
+            </Container>
+               {/* <div className="board-row">
                    {this.renderSquare(100)}
                    {this.renderSquare(100)}
                    {this.renderSquare(100)}
@@ -152,7 +246,7 @@ class Board extends React.Component{
                    {this.renderSquare(400)}
                    {this.renderSquare(400)}
                    {this.renderSquare(400)}
-               </div>
+               </div> */}
             </div>
         );
     }
